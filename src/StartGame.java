@@ -14,7 +14,7 @@ public class StartGame {
         }
     }
 
-    public void startGame(UserGuess userGuess, RandomWord randomWord, DrawHangman draw) {
+    public static void startGame(UserGuess userGuess, RandomWord randomWord, DrawHangman draw) {
         while (!randomWord.isDone(userGuess.getMissedGuesses().size(), draw.getCurGuess())) {
             draw.drawHangman(userGuess.getMissedGuesses().size(), userGuess.getAllGuesses());
 
