@@ -5,5 +5,5 @@
 - Write automated unit tests instead of manual test
 
 # Demonstration
-![repeatGuess](https://user-images.githubusercontent.com/76593076/181797776-f39b4c76-f428-48d6-bca6-52737937055f.JPG)
-![win](https://user-images.githubusercontent.com/76593076/181797839-2524dbe6-960f-4a03-84c5-4d8eeb3350f3.JPG)
+![repeatGuess](https://user-images.githubusercontent.com/76593076/181798632-b1bf0fdd-415d-4ea1-998b-7f12a86b8e8a.JPG)
+![win](https://user-images.githubusercontent.com/76593076/181798641-52d90a0f-61fc-4b57-870e-51cbab64d6a1.JPG)
