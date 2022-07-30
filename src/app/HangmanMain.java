@@ -1,3 +1,5 @@
+package app;
+
 public class HangmanMain {
     public static void main(String[] args) {
         RandomWord randomWord = new RandomWord("words_list.txt");
