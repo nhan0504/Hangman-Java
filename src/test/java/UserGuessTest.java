@@ -37,4 +37,13 @@ public class UserGuessTest {
         guess.setUserGuess('s');
         assertFalse(guess.checkGuess(word));
     }
+
+    @Test
+    public void updateMissed() {
+        guess.setUserGuess('s');
+        assertEquals('s', guess.getGuess());
+        guess.updateMissed();
+        char actual = guess.getMissedGuesses().get(0);
+        assertEquals('s', actual);
+    }
 }
