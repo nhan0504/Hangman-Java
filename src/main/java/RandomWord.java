@@ -23,6 +23,11 @@ public class RandomWord {
         return word;
     }
 
+    //method to set word for testing
+    public void setWord(String word) {
+        this.word = word;
+    }
+
     public void generateWord() {
         Random random = new Random();
         int randomNum = random.nextInt(wordList.size());
