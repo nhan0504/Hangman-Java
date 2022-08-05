@@ -1,4 +1,4 @@
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
@@ -21,4 +21,11 @@ public class RandomWordTest {
         ArrayList<Character> curGuess = new ArrayList<>(Arrays.asList('a','p','p','l','e'));
         assertTrue(word.isDone(0, curGuess));
     }
+
+    @Test
+    public void testIsDoneWhenMissedMoreThanSix() {
+        ArrayList<Character> curGuess = new ArrayList<>(Arrays.asList('a','p','p','l','e'));
+        assertTrue(word.isDone(7, curGuess));
+    }
+    
 }
