@@ -3,7 +3,6 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class RandomWordTest {
 
@@ -13,7 +12,6 @@ public class RandomWordTest {
     public void before() {
         word = new RandomWord("words.txt");
         word.setWord("apple");
-
     }
 
     @Test
