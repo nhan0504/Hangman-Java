@@ -17,4 +17,12 @@ public class UserGuessTest {
         //guess.setUserGuess('a');
         assertFalse(guess.isRepeat());
     }
+
+    @Test
+    public void testIsRepeatForRepeatGuess() {
+        guess.setUserGuess('a');
+        guess.isRepeat();
+        guess.setUserGuess('a');
+        assertTrue(guess.isRepeat());
+    }
 }
