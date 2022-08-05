@@ -31,4 +31,10 @@ public class UserGuessTest {
         guess.setUserGuess('a');
         assertTrue(guess.checkGuess(word));
     }
+
+    @Test
+    public void testCheckGuessForWrongGuess() {
+        guess.setUserGuess('s');
+        assertFalse(guess.checkGuess(word));
+    }
 }
