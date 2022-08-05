@@ -35,7 +35,7 @@ public class RandomWord {
     }
 
     public boolean isDone(int missed, ArrayList<Character> curGuess) {
-        if (missed != 6) {
+        if (missed < 6) {
             for (int i = 0; i < word.length(); i++) {
                 if (curGuess.get(i) != word.charAt(i)) {
                     return false;
