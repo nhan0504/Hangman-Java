@@ -25,4 +25,10 @@ public class UserGuessTest {
         guess.setUserGuess('a');
         assertTrue(guess.isRepeat());
     }
+
+    @Test
+    public void testCheckGuessForCorrectGuess() {
+        guess.setUserGuess('a');
+        assertTrue(guess.checkGuess(word));
+    }
 }
