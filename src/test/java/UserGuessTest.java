@@ -2,14 +2,19 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class UserGuessTest {
 
     UserGuess guess = null;
+    ArrayList<Character> curGuess = null;
     String word = "apple";
 
     @Before
     public void before() {
         guess = new UserGuess();
+        curGuess = new ArrayList<>(Arrays.asList('_','_','_','_','_'));
     }
 
     @Test
@@ -47,7 +52,7 @@ public class UserGuessTest {
     }
 
     @Test
-    public void updateMissed() {
+    public void testUpdateMissed() {
         guess.setUserGuess('s');
         assertEquals('s', guess.getGuess());
         guess.updateMissed();
@@ -55,5 +60,14 @@ public class UserGuessTest {
         assertEquals('s', actual);
     }
 
-
+    @Test
+    public void testUpdateWord() {
+        curGuess = new ArrayList<>(Arrays.asList('a','_','_','l','e'));
+        guess.setUserGuess('p');
+        guess.updateWord(word, curGuess);
+        char actual1 = curGuess.get(1);
+        assertEquals('p', actual1);
+        char actual2 = curGuess.get(2);
+        assertEquals('p', actual2);
+    }
 }
