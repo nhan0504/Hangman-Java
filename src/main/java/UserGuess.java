@@ -5,6 +5,8 @@ public class UserGuess {
     char guess;
     HashSet<Character> allGuesses = new HashSet<>();
     ArrayList<Character> missedGuesses = new ArrayList<>();
+
+    //Constructor
     public UserGuess() {
         guess = '_';
     }
