@@ -27,6 +27,14 @@ public class UserGuessTest {
     }
 
     @Test
+    public void testIsRepeatForNonRepeatedGuess() {
+        guess.setUserGuess('a');
+        guess.isRepeat();
+        guess.setUserGuess('b');
+        assertFalse(guess.isRepeat());
+    }
+
+    @Test
     public void testCheckGuessForCorrectGuess() {
         guess.setUserGuess('a');
         assertTrue(guess.checkGuess(word));
@@ -46,4 +54,6 @@ public class UserGuessTest {
         char actual = guess.getMissedGuesses().get(0);
         assertEquals('s', actual);
     }
+
+
 }
