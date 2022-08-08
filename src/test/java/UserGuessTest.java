@@ -91,4 +91,17 @@ public class UserGuessTest {
         assertEquals('e', actual);
     }
 
+    @Test
+    public void testUpdateWordLong() {
+        word = "responsibility";
+        curGuess = new ArrayList<>(Arrays.asList('r','e','s','p','o','n','s','_','b','_','l','_','t','y'));
+        guess.setUserGuess('i');
+        guess.updateWord(word, curGuess);
+        char actual = curGuess.get(7);
+        assertEquals('i', actual);
+        char actual1 = curGuess.get(9);
+        assertEquals('i', actual1);
+        char actual2 = curGuess.get(11);
+        assertEquals('i', actual2);
+    }
 }
