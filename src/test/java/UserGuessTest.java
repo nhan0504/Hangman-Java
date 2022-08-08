@@ -116,4 +116,16 @@ public class UserGuessTest {
         char actual2 = curGuess.get(2);
         assertEquals('p', actual2);
     }
+
+    @Test
+    public void testUpdateWordAndIsDone() {
+        curGuess = new ArrayList<>(Arrays.asList('a','_','_','l','e'));
+        guess.setUserGuess('p');
+        assertTrue(guess.checkGuess(word));
+        guess.updateWord(word, curGuess);
+        char actual1 = curGuess.get(1);
+        assertEquals('p', actual1);
+        char actual2 = curGuess.get(2);
+        assertEquals('p', actual2);
+    }
 }
