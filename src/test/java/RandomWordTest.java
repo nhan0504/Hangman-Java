@@ -59,4 +59,14 @@ public class RandomWordTest {
         guess.updateWord(word.getWord(), curGuess);
         assertFalse(word.isDone(0, curGuess));
     }
+
+    @Test
+    public void testUpdateWordAndIsDoneFirstGuess() {
+        word.setWord("apple");
+        ArrayList<Character> curGuess = new ArrayList<>(Arrays.asList('_','_','_','_','_'));
+        guess.setUserGuess('e');
+        guess.updateWord(word.getWord(), curGuess);
+        assertFalse(word.isDone(0, curGuess));
+    }
+    
 }
