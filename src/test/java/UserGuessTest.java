@@ -1,4 +1,6 @@
 import static org.junit.Assert.*;
+
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,15 +21,15 @@ public class UserGuessTest {
 
     @Test
     public void testIsRepeatFirstGuess() {
-        //guess.setUserGuess('a');
         assertFalse(guess.isRepeat());
     }
 
     @Test
     public void testIsRepeatForRepeatGuess() {
         guess.setUserGuess('a');
-        guess.isRepeat();
+        guess.updateGuessHistory();
         guess.setUserGuess('a');
+        guess.updateGuessHistory();
         assertTrue(guess.isRepeat());
     }
 
@@ -70,4 +72,14 @@ public class UserGuessTest {
         char actual2 = curGuess.get(2);
         assertEquals('p', actual2);
     }
+
+    @Test
+    public void testUpdateWordFirstLetter() {
+        curGuess = new ArrayList<>(Arrays.asList('_','_','_','l','e'));
+        guess.setUserGuess('a');
+        guess.updateWord(word, curGuess);
+        char actual = curGuess.get(0);
+        assertEquals('a', actual);
+    }
+    
 }
