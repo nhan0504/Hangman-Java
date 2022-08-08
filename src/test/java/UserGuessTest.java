@@ -128,4 +128,11 @@ public class UserGuessTest {
         char actual2 = curGuess.get(2);
         assertEquals('p', actual2);
     }
+
+    @Test
+    public void testUpdateGuessHistory() {
+        guess.setUserGuess('a');
+        guess.updateGuessHistory();
+        assertTrue(guess.getAllGuesses().contains('a'));
+    }
 }
