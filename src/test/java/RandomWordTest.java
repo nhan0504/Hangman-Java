@@ -68,5 +68,5 @@ public class RandomWordTest {
         guess.updateWord(word.getWord(), curGuess);
         assertFalse(word.isDone(0, curGuess));
     }
-    
+
 }

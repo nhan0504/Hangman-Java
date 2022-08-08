@@ -19,13 +19,7 @@ public class StartGame {
             draw.drawHangman(userGuess.getMissedGuesses().size(), userGuess.getAllGuesses());
 
             //Get user guess
-            do {
-                System.out.print("Enter a letter: ");
-                Scanner scr = new Scanner(System.in);
-                char guessLetter = scr.next().charAt(0);
-                userGuess.setUserGuess(guessLetter);
-            }
-            while (!Character.isAlphabetic(userGuess.getGuess()) || userGuess.isRepeat());
+            userGuess.getUserGuess();
 
             // Check if guess is correct
             if (userGuess.checkGuess(randomWord.getWord())) {
@@ -33,6 +27,7 @@ public class StartGame {
             } else {
                 userGuess.updateMissed();
             }
+            userGuess.updateGuessHistory();
 
             // Check if game is finished
             if (randomWord.isDone(userGuess.getMissedGuesses().size(),draw.getCurGuess())) {
