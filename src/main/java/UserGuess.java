@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class UserGuess {
     char guess;
@@ -29,12 +30,24 @@ public class UserGuess {
 
     public void resetAllGuesses () { allGuesses.clear(); }
 
+    public void getUserGuess() {
+        do {
+            System.out.print("Enter a letter: ");
+            Scanner scr = new Scanner(System.in);
+            guess = scr.next().charAt(0);
+        }
+        while (!Character.isAlphabetic(guess) || isRepeat());
+    }
+
+    public void updateGuessHistory() {
+        allGuesses.add(guess);
+    }
+
     public boolean isRepeat() {
         if (allGuesses.contains(guess)) {
             System.out.print("This letter has already been guessed.\n");
             return true;
         }
-        allGuesses.add(guess);
         return false;
     }
 
