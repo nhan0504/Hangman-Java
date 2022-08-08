@@ -135,4 +135,18 @@ public class UserGuessTest {
         guess.updateGuessHistory();
         assertTrue(guess.getAllGuesses().contains('a'));
     }
+
+    @Test
+    public void testUpdateGuessHistoryManyGuesses() {
+        guess.setUserGuess('a');
+        guess.updateGuessHistory();
+        guess.setUserGuess('b');
+        guess.updateGuessHistory();
+        guess.setUserGuess('c');
+        guess.updateGuessHistory();
+        guess.setUserGuess('d');
+        guess.updateGuessHistory();
+        assertFalse(guess.getAllGuesses().contains('e'));
+        assertTrue(guess.getAllGuesses().contains('b'));
+    }
 }
