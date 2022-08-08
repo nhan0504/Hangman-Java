@@ -81,5 +81,14 @@ public class UserGuessTest {
         char actual = curGuess.get(0);
         assertEquals('a', actual);
     }
-    
+
+    @Test
+    public void testUpdateWordLastLetter() {
+        curGuess = new ArrayList<>(Arrays.asList('_','_','_','l','_'));
+        guess.setUserGuess('e');
+        guess.updateWord(word, curGuess);
+        char actual = curGuess.get(4);
+        assertEquals('e', actual);
+    }
+
 }
